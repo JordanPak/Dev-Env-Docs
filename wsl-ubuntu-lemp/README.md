@@ -6,7 +6,6 @@ LEMP environment for local web application development (+WordPress)      on Wind
 
 1. Install Ubuntu from [Microsoft Store](https://apps.microsoft.com/store/apps)
 
-
 ## Nginx, MySQL, PHP, and Firewall (??)
 
 1. Follow [Digital Ocean's LEMP guide](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-22-04) for installing Nginx, MySQL, and PHP.
@@ -39,8 +38,11 @@ LEMP environment for local web application development (+WordPress)      on Wind
                       text/plain
                       text/xml;
       ```
-   1. Add the following settings to a new `# Added by %your name%` section below `# Virtual Host Configs`
+   1. Add the following settings to a new section below `# Virtual Host Configs`
    ```
+   ##
+   # ADDED BY %YOUR NAME%
+   ##
    fastcgi_buffering off;
    #fastcgi_buffers 16 16k; # in case a heavier site needs it later
    #fastcgi_buffer_size 32k; # in case a heavier site needs it later
