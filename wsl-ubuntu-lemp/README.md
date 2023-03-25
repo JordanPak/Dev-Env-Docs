@@ -9,6 +9,9 @@ LEMP environment for local web application development (+WordPress)      on Wind
 ## Nginx, MySQL, PHP, and Firewall (??)
 
 1. Follow [Digital Ocean's LEMP guide](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-22-04) for installing Nginx, MySQL, and PHP.
+
+### Nginx Adjustments
+
 1. Configure `/etc/nginx/nginx.conf`
    1. Comment out `user www-data;` at the top and add `user %your_sudo_user%;`
    1. Enable `server_names_hash_bucket_size 64;`
@@ -51,3 +54,5 @@ LEMP environment for local web application development (+WordPress)      on Wind
    ```
    1. Save `nginx.conf`
 1. Add the files in this README directory's `./nginx-global` to a new `/etc/nginx/global` (`common`, `phpX`, `wordpress` `conf` files). **Note:** some of the minor PHP versions may need to be updated!
+1. Structure individual site server blocks like the example in this README directory's `./nginx-sites-available/example.com`. Note: Provisioning Let's Encrypt certificates may alter this file manually, requiring an adjustment.
+1. Restart nginx: `sudo service restart nginx`
