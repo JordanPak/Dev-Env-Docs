@@ -4,7 +4,7 @@ LEMP environment for local web application development (+WordPress)      on Wind
 
 ## General
 
-1. Install Ubuntu from [Microsoft Store](https://apps.microsoft.com/store/apps)
+1. Install latest Ubuntu LTS from [Microsoft Store](https://apps.microsoft.com/store/apps)
 
 ## Nginx, MySQL, PHP, and Firewall (??)
 
@@ -50,3 +50,4 @@ LEMP environment for local web application development (+WordPress)      on Wind
    client_max_body_size 24M; # support heavier documents/requests
    ```
    1. Save `nginx.conf`
+1. Add the files in this README directory's `./nginx-global` to a new `/etc/nginx/global` (`common`, `phpX`, `wordpress` `conf` files)
