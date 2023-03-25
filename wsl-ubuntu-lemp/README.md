@@ -50,4 +50,4 @@ LEMP environment for local web application development (+WordPress)      on Wind
    client_max_body_size 24M; # support heavier documents/requests
    ```
    1. Save `nginx.conf`
-1. Add the files in this README directory's `./nginx-global` to a new `/etc/nginx/global` (`common`, `phpX`, `wordpress` `conf` files)
+1. Add the files in this README directory's `./nginx-global` to a new `/etc/nginx/global` (`common`, `phpX`, `wordpress` `conf` files). **Note:** some of the minor PHP versions may need to be updated!
