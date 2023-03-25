@@ -43,7 +43,7 @@ LEMP environment for local web application development (+WordPress)      on Wind
    ```
    fastcgi_buffering off;
    #fastcgi_buffers 16 16k; # in case a heavier site needs it later
-   #fastcgi_buffer_size 32k;` # in case a heavier site needs it later
+   #fastcgi_buffer_size 32k; # in case a heavier site needs it later
    index index.php; # look for PHP by default
    client_max_body_size 24M; # support heavier documents/requests
    ```
