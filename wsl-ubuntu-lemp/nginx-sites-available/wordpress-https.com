@@ -1,5 +1,5 @@
 server {
-	server_name wordpress.com www.wordpress.com;
+	server_name wordpress.com;
 	root /var/www/wordpress.com;
 
 	include global/ssl.conf;
@@ -9,15 +9,7 @@ server {
 }
 
 server {
-	if ($host = www.wordpress.com) {
-		return 301 https://$host$request_uri;
-	} # managed by Certbot
-
-	if ($host = wordpress.com) {
-		return 301 https://$host$request_uri;
-	} # managed by Certbot
-
-	server_name wordpress.com www.wordpress.com;
 	listen 80;
-	return 404; # managed by Certbot
+	server_name wordpress.com;
+	return 301 https://$host$request_uri;
 }
