@@ -54,5 +54,6 @@ LEMP environment for local web application development (+WordPress)      on Wind
    ```
    1. Save `nginx.conf`
 1. Add the files in this README directory's `./nginx-global` to a new `/etc/nginx/global` (`common`, `phpX`, `wordpress` `conf` files). **Note:** some of the minor PHP versions may need to be updated!
-1. Structure individual site server blocks like the example in this README directory's `./nginx-sites-available/example.com`. Note: Provisioning Let's Encrypt certificates may alter this file manually, requiring an adjustment.
+1. To add a new vhost/server block, start with the `./nginx-sites-available/exampl.com
+1. Structure individual WordPress site server blocks like the example in this README directory's `./nginx-sites-available/example-http.com`. Once a *Let's Encrypt* certificated is provisioned for the site, the file may need to be altered to look more like `./nginx-sites-available/example-https.com`.
 1. Restart nginx: `sudo service restart nginx`
