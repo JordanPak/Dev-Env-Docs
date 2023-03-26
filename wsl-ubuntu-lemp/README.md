@@ -17,7 +17,7 @@ LEMP environment for local web application development (+WordPress)      on Wind
 
 1. (DON'T DO THIS) Open the PHP FPM config for each version (`/etc/php/X.X/pool.d/www.conf`), comment out the `listen` set to the socket, and add `listen = 127.0.0.1:9000` instead.
 1. Open the PHP FPM config for each version (`/etc/php/X.X/pool.d/www.conf`) and switch the `user` and `group` to your username (helps with WordPress perms)
-1. Install misc extensions: `sudo apt install php-curl php-xml php-imagick php-zip php-gd php-intl php-pecl`
+1. Install misc extensions: `sudo apt install php-curl php-xml php-imagick php-zip php-gd php-intl php-pecl php-dev`
 1. Restart PHP: `sudo service phpX.X-fpm restart && sudo service phpX.X-fpm reload`
 
 ### Composer
@@ -97,3 +97,10 @@ The following can be used to provision a wildcard certificate:
 ```
 sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual --preferred-challenges=dns -d "*.local.yourdomain.com" --server https://acme-v02.api.letsencrypt.org/directory
 ```
+
+### Memcached
+
+1. Install Memcached: `sudo apt install memcached`
+1. Install `zlib`: `sudo apt install zlib1g zlib1g-dev`
+1. Install `memcached` PHP extension with PECL: `sudo pecl install memcache`
+1. Add `extension=memcache.so` to `php.ini` (for each PHP version)
