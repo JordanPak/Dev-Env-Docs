@@ -5,10 +5,31 @@ LEMP environment for local web application development (+WordPress)      on Wind
 ## General
 
 1. Install latest Ubuntu LTS from [Microsoft Store](https://apps.microsoft.com/store/apps)
+1. Install [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki#welcome-to-oh-my-zsh)
+1. Install `zip` and `unzip`: `sudo apt install zip unzip` (these are dependencies for the WP-CLI composer install)
 
 ## Nginx, MySQL, PHP, and Firewall (??)
 
 1. Follow [Digital Ocean's LEMP guide](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-22-04) for installing Nginx, MySQL, and PHP.
+
+### PHP Adjustments
+
+1. Install `curl` extension: `sudo apt install php-curl`
+
+### Composer
+
+1. Create a `.composer` directory in the user folder (`mkdir ~/.composer && cd ~/.composer`)
+1. Follow [the Composer install instructions](https://getcomposer.org/download/) (with `php -r ...`)
+1. Move the `composer.phar` file to `/usr/local/bin`, as noted in Composer's docs (`sudo mv composer.phar /usr/local/bin/composer`)
+1. Clear the *contents* of `~/.composer` (`cd ~/.composer && rm -rf *`)
+1. Init a "global" Composer project for the user from `~/.composer`: `composer init`, filling out the prompts:
+   1. "Minimum Stability" isn't needed
+   1. Type can be `project`
+   1. License isn't needed
+   1. Dependencies don't need to be defined
+   1. Don't enable autoload mapping
+1. Remove the `.htaccess` if one was created. It isn't needed.
+1. Add Composer's `vendor` directory to the user `PATH` by adding `export PATH="$HOME/.composer/vendor/bin:$PATH"` to the top of `~/.zshrc`. Run `source ~/.zshrc` or log out and log in again to use the composer packages.
 
 ### Nginx Adjustments
 
@@ -56,3 +77,13 @@ LEMP environment for local web application development (+WordPress)      on Wind
 1. Add the files in this README directory's `./nginx-global` to a new `/etc/nginx/global` (`common`, `phpX`, `wordpress` `conf` files). **Note:** some of the minor PHP versions may need to be updated!
 1. To add a new WordPress vhost/server block, start with the `./nginx-sites-available/example-http.com`. Once a *Let's Encrypt* certificate is provisioned for the site, the file may need to be altered to look more like `./nginx-sites-available/example-https.com`.
 1. Restart nginx: `sudo service restart nginx`
+
+### WP-CLI
+
+1. Navigate to "user global" composer: `cd ~/.composer`
+1. Install framework + default commands
+   1. `composer require wp-cli/wp-cli`
+   2. `composer require wp-cli/wp-cli-bundle`
+
+### Certbot
+
