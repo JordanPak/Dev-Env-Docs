@@ -91,3 +91,9 @@ LEMP environment for local web application development (+WordPress)      on Wind
 
 ### Certbot
 
+Until Windows 11 is installed or `systemd` becomes compatible with WSL on Windows 10, Certbot's recommended `snap` install will not work. Just use `sudo apt install certbot` for now.
+
+The following can be used to provision a wildcard certificate:
+```
+sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual --preferred-challenges=dns -d "*.local.yourdomain.com" --server https://acme-v02.api.letsencrypt.org/directory
+```
