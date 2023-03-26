@@ -17,7 +17,7 @@ LEMP environment for local web application development (+WordPress)      on Wind
 
 1. (DON'T DO THIS) Open the PHP FPM config for each version (`/etc/php/X.X/pool.d/www.conf`), comment out the `listen` set to the socket, and add `listen = 127.0.0.1:9000` instead.
 1. Open the PHP FPM config for each version (`/etc/php/X.X/pool.d/www.conf`) and switch the `user` and `group` to your username (helps with WordPress perms)
-1. Install `curl` extension: `sudo apt install php-curl`
+1. Install misc extensions: `sudo apt install php-curl php-xml php-imagick php-zip php-gd php-intl`
 1. Restart PHP: `sudo service phpX.X-fpm restart && sudo service phpX.X-fpm reload`
 
 ### Composer
