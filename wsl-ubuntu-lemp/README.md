@@ -100,7 +100,7 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
 
 ### Memcached
 
-1. Install Memcached: `sudo apt install memcached`
-1. Install `zlib`: `sudo apt install zlib1g zlib1g-dev`
-1. Install `memcached` PHP extension with PECL: `sudo pecl install memcache`
-1. Add `extension=memcache.so` to `php.ini` (for each PHP version)
+1. Install Memcached and PHP-specific package(s): `sudo apt install memcached php8.1-memcache`
+3. Install `zlib`: `sudo apt install zlib1g zlib1g-dev`
+4. Install `memcached` PHP extension with PECL: `sudo pecl install memcache`
+5. Add `extension=memcache.so` to `php.ini` (for each PHP version)
