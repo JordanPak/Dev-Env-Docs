@@ -87,7 +87,8 @@ LEMP environment for local web application development (+WordPress)      on Wind
 1. Navigate to "user global" composer: `cd ~/.composer`
 1. Install framework + default commands
    1. `composer require wp-cli/wp-cli`
-   2. `composer require wp-cli/wp-cli-bundle`
+   1. `composer require wp-cli/wp-cli-bundle`
+1. Install [Oh My Zsh bash completions](https://make.wordpress.org/cli/handbook/guides/installing/#oh-my-zsh)
 
 ### Certbot
 
