@@ -101,6 +101,8 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
 ### Memcached
 
 1. Install Memcached and PHP-specific package(s): `sudo apt install memcached php8.1-memcache`
-3. Install `zlib`: `sudo apt install zlib1g zlib1g-dev`
-4. Install `memcached` PHP extension with PECL: `sudo pecl install memcache`
-5. Add `extension=memcache.so` to `php.ini` (for each PHP version)
+1. Install `zlib`: `sudo apt install zlib1g zlib1g-dev`
+1. Install `memcached` PHP extension with PECL: `sudo pecl install memcache`
+1. Add `extension=memcache.so` to `php.ini` (for each PHP version)
+1. Install the [Memcached Object Cache plugin](https://wordpress.org/plugins/memcached/) per instructions
+1. Use [Query Monitor plugin](https://wordpress.org/plugins/query-monitor/) to verify object caching
