@@ -11,7 +11,6 @@ LEMP environment for local web application development (+WordPress)      on Wind
 ## Nginx, MySQL, PHP, and Firewall (??)
 
 1. Follow [Digital Ocean's LEMP guide](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-22-04) for installing Nginx, MySQL, and PHP.
-2. 
 
 ### PHP Adjustments
 
@@ -107,3 +106,12 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
 1. Add `extension=memcache.so` to `php.ini` (for each PHP version)
 1. Install the [Memcached Object Cache plugin](https://wordpress.org/plugins/memcached/) per instructions
 1. Use [Query Monitor plugin](https://wordpress.org/plugins/query-monitor/) to verify object caching
+
+## Helper Script
+
+1. Download [`start-web-services.sh`](https://raw.githubusercontent.com/JordanPak/Dev-Env-Docs/main/wsl-ubuntu-lemp/start-web-services.sh) from this README's repo directory to the user folder:
+   ```
+   cd ~ && curl -O https://raw.githubusercontent.com/JordanPak/Dev-Env-Docs/main/wsl-ubuntu-lemp/start-web-services.sh
+   ```
+1. Make the script executable: `chmod +x ~/start-web-services.sh`
+1. Run `cd ~ && ./start-web-services.sh` after starting the machine and shelling in
