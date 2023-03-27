@@ -127,3 +127,8 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
    ```
 1. Make the script executable: `chmod +x ~/start-web-services.sh`
 1. Run `cd ~ && ./start-web-services.sh` after starting the machine and shelling in
+
+
+## Node Version Manager (NVM)
+
+Install per [NVM's README](https://github.com/nvm-sh/nvm#install--update-script)
