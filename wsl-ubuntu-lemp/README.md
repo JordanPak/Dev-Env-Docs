@@ -107,6 +107,18 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
 1. Install the [Memcached Object Cache plugin](https://wordpress.org/plugins/memcached/) per instructions
 1. Use [Query Monitor plugin](https://wordpress.org/plugins/query-monitor/) to verify object caching
 
+### Xdebug
+
+1. Follow [Xdebug's `pecl` installation documentation](https://xdebug.org/docs/install#pecl)
+1. Make sure `zend_extension=/usr/lib/php/20210902/xdebug.so` is in each `php.ini`
+1. Add the following extension configuration to `php.ini`
+   ```
+   [xdebug]
+   xdebug.mode=debug
+   xdebug.start_with_request=yes
+   ```
+3. Restart Nginx and PHP
+
 ## Helper Script
 
 1. Download [`start-web-services.sh`](https://raw.githubusercontent.com/JordanPak/Dev-Env-Docs/main/wsl-ubuntu-lemp/start-web-services.sh) from this README's repo directory to the user folder:
