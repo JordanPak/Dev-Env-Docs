@@ -110,14 +110,14 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
 ### Xdebug
 
 1. Follow [Xdebug's `pecl` installation documentation](https://xdebug.org/docs/install#pecl)
-1. Make sure `zend_extension=/usr/lib/php/20210902/xdebug.so` is in each `php.ini`
+1. Make sure `zend_extension=/usr/lib/php/%PHP_EXTENSION_DIR%/xdebug.so` is in each `php.ini`
 1. Add the following extension configuration to `php.ini`
    ```
    [xdebug]
    xdebug.mode=debug
    xdebug.start_with_request=yes
    ```
-3. Restart Nginx and PHP
+1. Restart Nginx and PHP
 
 NOTE: Additional PHP versions' package will probably have to be built manually:
 1. Switch PHP version to the one Xdebug is being installed for: `sudo update-alternatives --config php`
