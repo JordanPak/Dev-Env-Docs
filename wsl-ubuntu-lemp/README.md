@@ -119,6 +119,11 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
    ```
 3. Restart Nginx and PHP
 
+NOTE: Additional PHP versions' package will probably have to be built manually:
+1. Switch PHP version to the one Xdebug is being installed for: `sudo update-alternatives --config php`
+1. Follow [Xdebug's instructions on compiling from source](https://xdebug.org/docs/install#compile) after downloading from GitHub releases
+1. You may need to reinstall the first Xdebug with PECL again 
+
 ## Helper Script
 
 1. Download [`start-web-services.sh`](https://raw.githubusercontent.com/JordanPak/Dev-Env-Docs/main/wsl-ubuntu-lemp/start-web-services.sh) from this README's repo directory to the user folder:
