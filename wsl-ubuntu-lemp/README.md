@@ -114,7 +114,7 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
 1. Add the following extension configuration to `php.ini`
    ```
    [xdebug]
-   xdebug.mode=debug
+   xdebug.mode=debug,develop
    xdebug.start_with_request=yes
    ```
 1. Restart Nginx and PHP
