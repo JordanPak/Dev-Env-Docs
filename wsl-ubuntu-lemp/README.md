@@ -123,7 +123,7 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
 
 NOTE: Additional PHP versions' package will probably have to be ~built manually~ installed separately:
 1. Switch PHP version to the one Xdebug is being installed for: `sudo update-alternatives --config php`
-1. Run PECL install with specific PHP version/suffix + specific package version. PHP 7.4 (Xdebug 3.1.6) for example: `sudo pecl -d php_suffix=7.4 install --force xdebug-3.1.6` ([source](https://stackoverflow.com/a/48352487))
+1. Run PECL install with specific PHP version/suffix + specific package version. PHP 7.4 (Xdebug 3.1.6) for example: `sudo pecl -d php_suffix=7.4 install --force xdebug-3.1.6` ([source](https://stackoverflow.com/a/48352487)). Make sure the `extension=/usr...` vs `zend_extension=/usr` is correct in `php.ini`!
 1. ~Follow [Xdebug's instructions on compiling from source](https://xdebug.org/docs/install#compile) after downloading from GitHub releases~
 1. ~You may need to reinstall the first Xdebug with PECL again~
 
