@@ -12,6 +12,8 @@ LEMP environment for local web application development (+WordPress)      on Wind
 
 1. Follow [Digital Ocean's LEMP guide](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-22-04) for installing Nginx, MySQL, and PHP.
 
+Note: PHP verison used in CLI can be changed with `sudo update-alternatives --config php`.
+
 ### PHP Adjustments
 
 1. **(DON'T DO THIS)** Open the PHP FPM config for each version (`/etc/php/X.X/pool.d/www.conf`), comment out the `listen` set to the socket, and add `listen = 127.0.0.1:9000` instead.
@@ -119,10 +121,11 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
    ```
 1. Restart Nginx and PHP
 
-NOTE: Additional PHP versions' package will probably have to be built manually:
+NOTE: Additional PHP versions' package will probably have to be ~built manually~ installed separately:
 1. Switch PHP version to the one Xdebug is being installed for: `sudo update-alternatives --config php`
-1. Follow [Xdebug's instructions on compiling from source](https://xdebug.org/docs/install#compile) after downloading from GitHub releases
-1. You may need to reinstall the first Xdebug with PECL again 
+1. Run PECL install with specific PHP version/suffix + specific package version. PHP 7.4 (Xdebug 3.1.6) for example: `sudo pecl -d php_suffix=7.4 install --force xdebug-3.1.6` ([source](https://stackoverflow.com/a/48352487))
+1. ~Follow [Xdebug's instructions on compiling from source](https://xdebug.org/docs/install#compile) after downloading from GitHub releases~
+1. ~You may need to reinstall the first Xdebug with PECL again~
 
 ## Helper Script
 
