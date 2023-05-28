@@ -111,8 +111,8 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
 
 ### Xdebug
 
-1. Follow [Xdebug's `pecl` installation documentation](https://xdebug.org/docs/install#pecl)
-1. Make sure `zend_extension=/usr/lib/php/%PHP_EXTENSION_DIR%/xdebug.so` is in each `php.ini`
+1. Follow [Xdebug's Linux install instructions](https://xdebug.org/docs/install#linux): `sudo apt install php8.1-xdebug` ~Follow [Xdebug's `pecl` installation documentation](https://xdebug.org/docs/install#pecl)~
+1. Make sure `zend_extension=/usr/lib/php/%PHP_EXTENSION_DIR%/xdebug.so` is in each `php.ini` (note: `extension=/usr/lib/...` may not work!)
 1. Add the following extension configuration to `php.ini`
    ```
    [xdebug]
@@ -121,9 +121,9 @@ sudo certbot certonly --agree-tos --email YOUR-ACTUAL-EMAIL@EMAIL.EMAIL --manual
    ```
 1. Restart Nginx and PHP
 
-NOTE: Additional PHP versions' package will probably have to be ~built manually~ installed separately:
-1. Switch PHP version to the one Xdebug is being installed for: `sudo update-alternatives --config php`
-1. Run PECL install with specific PHP version/suffix + specific package version. PHP 7.4 (Xdebug 3.1.6) for example: `sudo pecl -d php_suffix=7.4 install --force xdebug-3.1.6` ([source](https://stackoverflow.com/a/48352487)). Make sure the `extension=/usr...` vs `zend_extension=/usr` is correct in `php.ini`!
+NOTE: Additional PHP versions' package can be installed with `sudo apt install phpX.X-xdebug` (remember to load the extention in `php.ini` for that version) ~will probably have to be built manually~:
+1. ~Switch PHP version to the one Xdebug is being installed for: `sudo update-alternatives --config php`~
+1. ~Run PECL install with specific PHP version/suffix + specific package version. PHP 7.4 (Xdebug 3.1.6) for example: `sudo pecl -d php_suffix=7.4 install --force xdebug-3.1.6` ([source](https://stackoverflow.com/a/48352487)). Make sure the `extension=/usr...` vs `zend_extension=/usr` is correct in `php.ini`!~
 1. ~Follow [Xdebug's instructions on compiling from source](https://xdebug.org/docs/install#compile) after downloading from GitHub releases~
 1. ~You may need to reinstall the first Xdebug with PECL again~
 
