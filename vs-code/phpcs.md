@@ -3,7 +3,8 @@
 ## Install PHPCS and WordPress Standards with Composer
 1. Require [WP Coding Standards](https://packagist.org/packages/wp-coding-standards/wpcs): `composer require --dev wp-coding-standards/wpcs`
 1. Require [PHP_CodeSniffer Standards Composer Installer Plugin](https://packagist.org/packages/dealerdirect/phpcodesniffer-composer-installer): `composer require --dev dealerdirect/phpcodesniffer-composer-installer`. This is required because the one that comes with WPCS doesn't work 🤷‍♀️.
-1. Clear caches and reinstall everything:
+1. You'll **probably** need to require this to get VS Code extensions to work (even though it's a dep of WPCS): `composer require --dev phpcompatibility/php-compatibility`
+3. Clear caches and reinstall everything:
    1. `rm -rf vendor`
    1. `rm composer.lock`
    1. `composer clear-cache`
