@@ -1,0 +1,27 @@
+{
+	"name": "Source: Directory",
+	"host": "sftp.whatever.com",
+	"protocol": "sftp",
+	"port": 2222,
+	"username": "username",
+	"password": "********",
+	"remotePath": "/wp-content/plugins/whatever",
+	"uploadOnSave": true,
+	"useTempFile": false,
+	"openSsh": false,
+	"syncOption": {
+		"delete": true
+	},
+	"watcher": {
+		"files": "**/*",
+		"autoUpload": true,
+		"autoDelete": true
+	},
+	"ignore": [
+		".vscode",
+		".git",
+		".github",
+		".DS_Store",
+		"node_modules"
+	]
+}
