@@ -1,4 +1,5 @@
 {
+	"_comment": "This file goes in the LOCAL SOURCE'S .vscode DIRECTORY you'd like to sync, per remotePath!"
 	"name": "Source: Directory",
 	"host": "sftp.whatever.com",
 	"protocol": "sftp",
