@@ -5,3 +5,7 @@ sudo certbot delete
 
 # Create new certificate.
 sudo certbot certonly --manual --manual-public-ip-logging-ok --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory -d "*.local.jordanpak.com" 
+
+# Restart nginx
+sudo service nginx restart
+sudo service nginx reload
