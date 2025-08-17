@@ -1,0 +1,33 @@
+# REDIRECT MISSING MEDIA TO PRODUCTION
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^staging.sitenetworkdomain1\.com$ [NC]
+RewriteCond %{REQUEST_URI} \.(bmp|jpg|jpeg|png|gif|webp|tiff|ico|svg|pdf|mp3|mp4|mov|zip|log)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ https://sitenetworkdomain1.com/$1 [R=301,L]
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^staging.sitenetworkdomain2\.com$ [NC]
+RewriteCond %{REQUEST_URI} \.(bmp|jpg|jpeg|png|gif|webp|tiff|ico|svg|pdf|mp3|mp4|mov|zip|log)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ https://sitenetworkdomain2.com/$1 [R=301,L]
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^staging.sitenetworkdomain3\.com$ [NC]
+RewriteCond %{REQUEST_URI} \.(bmp|jpg|jpeg|png|gif|webp|tiff|ico|svg|pdf|mp3|mp4|mov|zip|log)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ https://sitenetworkdomain3.com/$1 [R=301,L]
+# END MEDIA REDIRECT
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# add a trailing slash to /wp-admin
+RewriteRule ^wp-admin$ wp-admin/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^(wp-(content|admin|includes).*) $1 [L]
+RewriteRule ^(.*\.php)$ $1 [L]
+RewriteRule . index.php [L]
