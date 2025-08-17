@@ -1,0 +1,21 @@
+	# Enable concat scripts/styles (per https://github.com/Automattic/nginx-http-concat#installation--configuration)
+	location /_static/ {
+		fastcgi_pass "unix:/Users/jordanpak/.config/valet/valet.sock";
+		fastcgi_index "/Users/jordanpak/.composer/vendor/laravel/valet/server.php";
+		include fastcgi_params;
+		fastcgi_param SCRIPT_FILENAME /Users/jordanpak/sites/WP-ROOT/wp-content/mu-plugins/http-concat/ngx-http-concat.php;
+	}
+
+	# Increase buffer size for larger requests (like in editor)
+	fastcgi_buffers 16 16k;
+	fastcgi_buffer_size 32k;
+
+	# Media fallback domain
+	location ~* \.(bmp|jpg|jpeg|png|gif|webp|tiff|ico|svg|pdf|mp3|mp4|mov|zip)$ {
+		root /Users/jordanpak/sites/WP-ROOT;
+		try_files $uri @missing;
+	}
+
+	location @missing {
+		return 301 https://production-domain.com$request_uri;
+	}
