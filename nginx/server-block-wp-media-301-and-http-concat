@@ -11,7 +11,7 @@
 	fastcgi_buffer_size 32k;
 
 	# Media fallback domain
-	location ~* \.(bmp|jpg|jpeg|png|gif|webp|tiff|ico|svg|pdf|mp3|mp4|mov|zip)$ {
+	location ~* \.(bmp|jpg|jpeg|png|gif|webp|tiff|ico|svg|svgz|ico|pdf|mp3|mp4|mid|midi|mov|wav|zip)$ {
 		root /Users/jordanpak/sites/WP-ROOT;
 		try_files $uri @missing;
 	}
