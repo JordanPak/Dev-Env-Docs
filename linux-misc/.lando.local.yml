@@ -1,8 +1,0 @@
-services:
-  php:
-    persistent-storage:
-      - source: /Users/jpakrosnis/pmc/sites-composer
-        target: /home/jpakrosnis/site-host-dependencies
-        type: bind
-  mysql:
-    portforward: 3310
