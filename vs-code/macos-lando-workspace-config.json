@@ -1,0 +1,61 @@
+{
+	"folders": [
+		// {
+		// 	"path": "../deadline"
+		// },
+		// {
+		// 	"path": "../_wordpress/6.7.3"
+		// },
+		// {
+		// 	"path": "../deadline/mu-plugins",
+		// },
+		// {
+		// 	"path": "../deadline/plugins",
+		// },
+		{
+			"path": "../deadline/plugins/pmc-plugins",
+		},
+		// {
+		// 	"path": "../deadline/plugins/pmc-plugins/pmc-gutenberg",
+		// },
+		// {
+		// 	"path": "../deadline/themes/pmc-core-v2"
+		// },
+		{
+			"path": "../deadline/themes/pmc-deadline-2019"
+		}
+	],
+	"settings": {
+		"intelephense.environment.includePaths": [
+			"/Users/jpakrosnis/.composer/vendor/phpunit/phpunit/src",
+			"/Users/jpakrosnis/pmc/sites-composer",
+			"/Users/jpakrosnis/pmc/lando-sites/_wordpress/6.7.3",
+			"/Users/jpakrosnis/pmc/lando-sites/deadline"
+		],
+
+		// PHP Sniffer & Beautifier
+		"phpsab.standard": "PmcWpVip",
+		"phpsab.executablePathCS": "/Users/jpakrosnis/.composer/vendor/bin/phpcs",
+		"phpsab.executablePathCBF": "/Users/jpakrosnis/.composer/vendor/bin/phpcbf",
+		"phpsab.snifferShowSources": true
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Listen for Xdebug",
+				"type": "php",
+				"request": "launch",
+				"port": 9003,
+				"log": false,
+				"pathMappings": {
+					"/var/www/html": "/Users/jpakrosnis/pmc/lando-sites/_wordpress/6.7.3",
+					"/var/www/html/wp-content": "/Users/jpakrosnis/pmc/lando-sites/deadline",
+				},
+				"xdebugSettings": {
+					"max_data": 10000
+				}
+			}
+		]
+	}
+}
