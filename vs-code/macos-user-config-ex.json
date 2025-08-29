@@ -1,0 +1,96 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    // "git.autoRepositoryDetection": "subFolders"
+    "git.autoRepositoryDetection": false,
+    "workbench.editor.labelFormat": "short",
+    "workbench.editor.wrapTabs": true,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": true,
+    "terminal.integrated.fontFamily": "MesloLGS-NF-Regular, Menlo for Powerline, Menlo, Monaco, 'Courier New', monospace",
+    "terminal.integrated.lineHeight": 1.2,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "update.mode": "manual",
+    "editor.renderWhitespace": "all",
+    "git.suggestSmartCommit": false,
+    "vsicons.presets.jsonOfficial": true,
+    "githubPullRequests.pullBranch": "never",
+    "githubPullRequests.fileListLayout": "tree",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 120,
+    "prettier.useTabs": true,
+    "html.format.wrapAttributes": "force-aligned",
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+    "workbench.colorCustomizations": {
+        "[One Dark Pro]": {
+            "terminal.ansiBrightBlack": "#586d74"
+        }
+    },
+    "diffEditor.ignoreTrimWhitespace": true,
+    "remote.SSH.connectTimeout": 60,
+    "gitlens.gitCommands.skipConfirmations": [
+        "fetch:command"
+    ],
+    "vscode-pets.petSize": "small",
+    "vscode-pets.throwBallWithMouse": true,
+    "editor.insertSpaces": false,
+    "cody.autocomplete.enabled": false,
+    "intelephense.diagnostics.undefinedConstants": false, // Because Intelephense can't follow constants defined with __NAMESPACE__ :(
+    // "editor.fontLigatures": true
+    "stylelint.validate": [
+        "css",
+        "postcss",
+        "scss"
+    ],
+    "mcfs.notifications": {
+        "hasOpenedConnectionManager": true,
+        "hasConnectedToMC": true,
+        "dontShowConnectionManagerAlert": false,
+        "hasShownChangelog": false,
+        "hasSeenPromoForVersion": "3.0"
+    },
+    "mcfs.connections": [
+        {
+            "name": "Main",
+            "account_id": "XXXXX93",
+            "authBaseUri": "https://SECRET.auth.marketingcloudapis.com",
+            "client_id": "CLIENT_ID",
+            "client_secret": "CLIENT_SECRET",
+            "grant_type": "client_credentials"
+        },
+        {
+            "name": "WWD",
+            "account_id": "XXXXX41",
+            "authBaseUri": "https://SECRET.auth.marketingcloudapis.com",
+            "client_id": "CLIENT_ID",
+            "client_secret": "CLIENT_SECRET",
+            "grant_type": "client_credentials"
+        },
+    ],
+    "git.confirmSync": false,
+    "diffEditor.experimental.showMoves": true,
+    "gitlens.views.scm.grouped.views": {
+        "commits": false,
+        "branches": true,
+        "remotes": true,
+        "stashes": false,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "repositories": false,
+        "searchAndCompare": false,
+        "launchpad": false
+    },
+    "workbench.colorTheme": "One Dark Pro",
+    "git.openRepositoryInParentFolders": "always",
+    "xml.server.preferBinary": true,
+    "git.blame.editorDecoration.enabled": false,
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "editor.accessibilitySupport": "off"
+}
